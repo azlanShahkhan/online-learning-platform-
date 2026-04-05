@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Lumina Platform</title>
+  <meta name="description" content="Get in touch with the Lumina team.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      background: var(--surface-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text);
+      font-family: inherit;
+      transition: all var(--transition);
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+    textarea.form-input {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="logo">Lumina.</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div>
+        <a href="login.html" class="btn btn-outline" style="margin-right: 1rem;">Log In</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <main class="container animate-fade-in" style="padding-top: 5rem; padding-bottom: 6rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Let's Connect</h1>
+    <p style="color: var(--text-muted); font-size: 1.125rem; max-width: 600px;">
+      Have a question about our platforms, pricing, or looking to partner? Reach out to our team and we'll get back to you as soon as possible.
+    </p>
+
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info animate-fade-in delay-1">
+        
+        <div class="contact-method">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div style="font-size: 0.875rem; color: var(--text-muted);">Email Us</div>
+            <div style="font-weight: 500;">support@lumina.io</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div style="font-size: 0.875rem; color: var(--text-muted);">Office</div>
+            <div style="font-weight: 500;">450 Design Avenue<br>San Francisco, CA 94103</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div style="font-size: 0.875rem; color: var(--text-muted);">Live Chat</div>
+            <div style="font-weight: 500;">Available 9AM - 5PM PST</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form animate-fade-in delay-2">
+        <form style="background: var(--surface); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <input type="text" id="firstName" class="form-input" placeholder="Jane" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input type="text" id="lastName" class="form-input" placeholder="Doe" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input type="email" id="email" class="form-input" placeholder="jane@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="subject">Subject</label>
+            <select id="subject" class="form-input" required>
+              <option value="" disabled selected>Select a topic...</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="billing">Billing & Pricing</option>
+              <option value="partnership">Partnerships</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" class="form-input" placeholder="How can we help you?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-logo">Lumina.</a>
+          <p class="footer-desc">The premier destination for professionals looking to elevate their skills in the modern world.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="courses.html">Browse Courses</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">Instructors</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumina Platform. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
